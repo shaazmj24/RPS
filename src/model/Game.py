@@ -16,30 +16,27 @@ class Game:
 
     def reset_round(self): 
         self.round = 0  
-
-    def exceed_round(self): 
-        return self.round > 4 
     
     def play_round(self, option):   
         robot_move = choice(["rock", "scissor", "paper"])
         if option == robot_move:  
-            return "draw"
+            return "Robot chose " + robot_move + " so its a draw"
         elif ((option == "paper" and robot_move == "rock") or 
               (option == "scissor" and robot_move == "paper") or 
               (option == "rock" and robot_move == "scissor")): 
             self.player.addScore()
-            return "Win!"
+            return "Robot chose " + robot_move + " You Win!"
         else: 
             self.robot_score()
-            return "lose"
+            return "Robot chose " + robot_move + " You lose hehe"
     
     def determine_winner(self): 
         if self.player.score > self.score: 
             self.player.addW()
-            return "You are victorious!"
+            return self.player.name + " is victorious!"
         elif self.player.score < self.score: 
             self.player.addL()
-            return "You lost..."
+            return self.player.name + " lost..."
         else: 
-            return "Draw"
+            return "Draw......."
 

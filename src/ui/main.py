@@ -4,19 +4,25 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"
 
 from src.model.Game import Game 
 from src.model.Player import Player
-import customtkinter as ctk 
 
-ctk.set_appearance_mode("light")
-ctk.set_default_color_theme("blue")
-
-if __name__ == "__main__":   
-    root = ctk.CTk() 
+if __name__ == "__main__":  
+    name = input("Enter Name: ") 
+    p1 = Player(name) 
+    game = Game(p1)
     
-    root.title("Rock Paper Scissor")
-    root.geometry("400x300")
+    round = 1
+    while(not round > 4): 
+        print("Round",round, "!")
+        print("1.rock 2. paper 3. scissor") 
+        option = input("choose option ") 
+        while (not option == "rock" and not option == "paper" and not option == "scissor"):  
+            print("1.rock 2. paper 3. scissor")  
+            option = input("choose option ")
+        round += 1
+        print(game.play_round(option))
+    
+    print(game.determine_winner())
 
-    # Example label
-    label = ctk.CTkLabel(root, text="Welcome to Rock Paper Scissors!")
-    label.pack(pady=20)
 
-    root.mainloop()
+
+

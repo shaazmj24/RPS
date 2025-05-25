@@ -1,5 +1,6 @@
 import sys
 import os
+import time 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
 from src.model.Game import Game 
@@ -12,6 +13,11 @@ if __name__ == "__main__":
     
     round = 1
     while(not round > 4): 
+        print("Get ready...")
+        for i in range(3, 0, -1): 
+            print(i) 
+            time.sleep(1)
+        print("Go!")
         print("Round",round, "!")
         print("1.rock 2. paper 3. scissor") 
         option = input("choose option ") 
@@ -21,7 +27,7 @@ if __name__ == "__main__":
         round += 1
         print(game.play_round(option))
     
-    print(game.determine_winner())
+    print(game.determine_winner()) 
 
 
 

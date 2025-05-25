@@ -1,5 +1,6 @@
 from random import choice 
 
+
 class Game:  
     name = "Robot"
 
@@ -20,15 +21,15 @@ class Game:
     def play_round(self, option):   
         robot_move = choice(["rock", "scissor", "paper"])
         if option == robot_move:  
-            return "Robot chose " + robot_move + " so its a draw"
+            return "Robot chose " + robot_move + " .it's a tie!"
         elif ((option == "paper" and robot_move == "rock") or 
               (option == "scissor" and robot_move == "paper") or 
               (option == "rock" and robot_move == "scissor")): 
             self.player.addScore()
-            return "Robot chose " + robot_move + " You Win!"
+            return "Robot chose " + robot_move + " .You won this round!"
         else: 
             self.robot_score()
-            return "Robot chose " + robot_move + " You lose hehe"
+            return "Robot chose " + robot_move + " .You lost this round!"
     
     def determine_winner(self): 
         if self.player.score > self.score: 

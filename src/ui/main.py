@@ -30,6 +30,7 @@ if __name__ == "__main__":
             option = input("choose option ")
         round += 1
         print(game.play_round(option))
+        time.sleep(2.42)
     
     print(game.determine_winner()) 
 

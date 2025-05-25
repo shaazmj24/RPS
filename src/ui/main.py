@@ -16,11 +16,15 @@ if __name__ == "__main__":
         print("Get ready...")
         for i in range(3, 0, -1): 
             print(i) 
-            time.sleep(1)
+            time.sleep(0.6)
         print("Go!")
-        print("Round",round, "!")
-        print("1.rock 2. paper 3. scissor") 
+        print("Round",round, "!") 
+        for r in (["Rock...", "Paper..", "Scissor."]): 
+            print(r)
+            time.sleep(0.5)
         option = input("choose option ") 
+        if (option == "q"): 
+            break 
         while (not option == "rock" and not option == "paper" and not option == "scissor"):  
             print("1.rock 2. paper 3. scissor")  
             option = input("choose option ")
